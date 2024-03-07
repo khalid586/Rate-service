@@ -30,11 +30,11 @@ function changeColor(button){
     // console.log()
 }
 function showPost(id){
-    const currPost = id[id.length-1];
+    const currPostCnt = id[id.length-1];
 
-    if(prevPostCnt != currPost){
-        const post = document.getElementById(`post-${currPost}`);
-        console.log(currPost);
+    if(prevPostCnt != currPostCnt){
+        const post = document.getElementById(`post-${currPostCnt}`);
+        console.log(currPostCnt);
     
         console.log(post.classList)
     
@@ -43,7 +43,7 @@ function showPost(id){
         const prevPost = document.getElementById(`post-${prevPostCnt}`);
         console.log(prevPost.innerText)
         prevPost.classList.add('hidden');
-        prevPostCnt = currPost;
+        prevPostCnt = currPostCnt;
     }
     
 }
