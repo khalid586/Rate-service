@@ -10,8 +10,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Rate service</title>
+    <style>
+        *{
+            font-family: manrope;
+        }
+    </style>
 </head>
 <body>
+    <nav class="m-4 mb-16 text-center">
+        <p class="text-5xl font-extrabold text-blue-500">Rate Service</p>
+    </nav>
     <div class="flex justify-around m-2">
         <button class="btn p-2 rounded-full px-4 bg-green-500 text-white">Doctor</button>
         <button class="btn p-2 rounded-full px-4 bg-gray-100">Engineer</button>
@@ -19,8 +27,8 @@
     </div>
 
     <div class="text-center m-8 posts">This is doctor's page</div>
-    <div class="text-center m-8 hidden posts">This is engineer's page</div>
-    <div class="text-center m-8 hidden posts">This is lawyer's page</div>
+    <div class="text-center m-8 posts hidden">This is engineer's page</div>
+    <div class="text-center m-8 posts hidden">This is lawyer's page</div>
 
     <script src="script.js"></script>
 </body>

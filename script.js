@@ -1,33 +1,50 @@
 const buttons = document.querySelectorAll('.btn');
-const posts = document.querySelectorAll('.posts');
+const Posts = document.querySelectorAll('.posts');
 
-let prevBtn = 1;
+let prevBtn = 0 , prevPostCnt = 0;
 
 for(let i = 0; i < buttons.length; i++){
-    buttons[i].setAttribute('id',`btn-${i+1}`);
+    buttons[i].setAttribute('id',`btn-${i}`);
 }
-for(let i = 0; i < posts.length; i++){
-    posts[i].setAttribute('id',`post-${i+1}`);
+for(let i = 0; i < Posts.length; i++){
+    Posts[i].setAttribute('id',`post-${i}`);
 }
 
 function changeColor(button){
-    button.classList.add('bg-green-500');
-    button.classList.add('text-white');
-    
-    
-    const prevButton = document.getElementById(`btn-${prevBtn}`);
-    
-    prevButton.classList.add('bg-gray-100');
-    prevButton.classList.remove('bg-green-500');
-    prevButton.classList.remove('text-white');
-
     const lastDigit = button.id[button.id.length-1];
-    prevBtn = lastDigit;
+
+    if(lastDigit != prevBtn){
+        button.classList.add('bg-green-500');
+        button.classList.add('text-white');
+        
+        
+        const prevButton = document.getElementById(`btn-${prevBtn}`);
+        
+        prevButton.classList.add('bg-gray-100');
+        prevButton.classList.remove('bg-green-500');
+        prevButton.classList.remove('text-white');
+    
+        prevBtn = lastDigit;
+    }
 
     // console.log()
 }
 function showPost(id){
     const currPost = id[id.length-1];
+
+    if(prevPostCnt != currPost){
+        const post = document.getElementById(`post-${currPost}`);
+        console.log(currPost);
+    
+        console.log(post.classList)
+    
+        post.classList.remove('hidden');
+    
+        const prevPost = document.getElementById(`post-${prevPostCnt}`);
+        console.log(prevPost.innerText)
+        prevPost.classList.add('hidden');
+        prevPostCnt = currPost;
+    }
     
 }
 
