@@ -14,14 +14,14 @@ function changeColor(button){
     const lastDigit = button.id[button.id.length-1];
 
     if(lastDigit != prevBtn){
-        button.classList.add('bg-green-500');
+        button.classList.add('bg-green-300');
         button.classList.add('text-white');
         
         
         const prevButton = document.getElementById(`btn-${prevBtn}`);
         
         prevButton.classList.add('bg-gray-100');
-        prevButton.classList.remove('bg-green-500');
+        prevButton.classList.remove('bg-green-300');
         prevButton.classList.remove('text-white');
     
         prevBtn = lastDigit;
